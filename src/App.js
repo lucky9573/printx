@@ -1,6 +1,8 @@
 import './App.css'
-
+import HomePage from './pages/HomePage';
+import NavBar from './pages/NavBar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SignIn from './pages/Signin';
 const App = () => {
     return (
 
@@ -11,10 +13,8 @@ const App = () => {
                 <div id="page-body">
                     <Routes>
                         <Route path="/" element={<HomePage />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/articles" element={<ArticlesList />} />
-                        <Route path="/articles/:articleId" element={<ArticlePage />} />
-                        <Route path="*" element={<NotFoundPage />} />
+                        <Route path="/Singin" element={<SignIn/>}/>
+                        
                     </Routes>
                 </div>
             </div>
