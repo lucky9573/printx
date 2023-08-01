@@ -1,16 +1,25 @@
-function MyButton() {
-    return (
-        <button>
-            I'm a button
-        </button>
-    );
-}
+import './App.css'
 
-export default function MyApp() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+const App = () => {
     return (
-        <div>
-            <h1>Welcome to my app</h1>
-            <MyButton />
-        </div>
+
+        <BrowserRouter>
+
+            <div className="App">
+                <NavBar />
+                <div id="page-body">
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/articles" element={<ArticlesList />} />
+                        <Route path="/articles/:articleId" element={<ArticlePage />} />
+                        <Route path="*" element={<NotFoundPage />} />
+                    </Routes>
+                </div>
+            </div>
+        </BrowserRouter>
+
     );
 }
+export default App; 
